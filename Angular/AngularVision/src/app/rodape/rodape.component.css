@@ -1,16 +1,38 @@
 /* Rodapé */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-bg-color, #333);
+    color: var(--footer-text-color, grey);
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0 40px; /* Aumentado o padding inferior */
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 50%;
+    border-top: 1px solid var(--footer-border-color, #555); /* Diminuída a altura da borda */
+    margin: 0; /* Adicionado para remover qualquer margem */
 }
 
 .footer a {
-    color: #fff;
+    color: var(--footer-link-color, grey);
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 5px; /* Diminuída a margem direita */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    gap: 10px; /* Espaçamento entre o texto e o botão */
+}
+
+.footer-content button {
+    background-color: var(--button-bg-color, #555);
+    color: var(--button-text-color, white);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-content button:hover {
+    background-color: var(--button-hover-bg-color, #777);
 }

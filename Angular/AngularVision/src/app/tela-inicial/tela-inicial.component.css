@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #2e2e2e; /* Cor global */
     margin: 0;
     padding: 0;
 }
@@ -13,7 +13,7 @@ body {
     background-image: url('../../assets/images/Imagens_TOC_borrada.jpg');
     background-size: cover; 
     background-position: center;
-    color: #fff;
+    color: #f5f5f5; /* Cor global */
 }
 
 .banner .logo {
@@ -31,14 +31,14 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #fff;
+    background-color: #3e3e3e; /* Cor global */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 .conteudo .destaque {
     text-align: center;
-    color: #333;
+    color: #f5f5f5; /* Cor global */
     margin-bottom: 20px;
 }
 
@@ -50,9 +50,11 @@ body {
 
 .filtros-competicoes select {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #555; /* Cor global */
     border-radius: 5px;
     font-size: 14px;
+    background-color: #3e3e3e; /* Cor global */
+    color: #f5f5f5; /* Cor global */
 }
 
 /* Lista de competições */
@@ -66,15 +68,18 @@ body {
 .competicao-card {
     position: relative;
     width: calc(33.333% - 20px); /* Três cards por linha */
+    height: 300px;
     margin-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    color: #000;
+    color: #f5f5f5; /* Cor global */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    border: 2px solid #555; /* Cor global */
 }
 
 /* Ajustes para dispositivos móveis */
@@ -94,12 +99,21 @@ body {
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+}
+
+.competicao-card:hover .competicao-info {
+    bottom: 0;
 }
 
 .competicao-info h3 {
     margin-top: 0;
     font-size: 24px;
 }
+
 .competicao-info.com-banner {
     background-color: transparent;
 }
@@ -112,8 +126,8 @@ button {
     margin-top: 10px;
     padding: 10px 15px;
     font-size: 14px;
-    color: #fff;
-    background-color: #28a745;
+    color: #f5f5f5; /* Cor global */
+    background-color: #4caf50; /* Cor global */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -121,5 +135,41 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #45a049; /* Cor global */
+}
+
+.detalhes-competicao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(46, 46, 46, 0.9); /* Cor global */
+    color: #f5f5f5; /* Cor global */
+    border-top: 1px solid #555; /* Cor global */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
+    font-size: 14px;
+    transition: bottom 0.5s ease;
+}
+
+.detalhes-competicao p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.detalhes-competicao button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #f5f5f5; /* Cor global */
+    background-color: #1e90ff; /* Cor global */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detalhes-competicao button:hover {
+    background-color: #0056b3;
 }

@@ -65,6 +65,9 @@ export class TelaInicialComponent implements OnInit {
             ? competicao.bannerImagem
             : `http://localhost:5000/${competicao.bannerImagem}`;
         }
+        this.userService.getUser(competicao.criadorUsuarioId).subscribe(usuario => {
+          competicao.emailOrganizador = usuario.email;
+        });
       });
     }, error => console.log("Erro ao buscar competições: ", error));
   }
@@ -72,5 +75,15 @@ export class TelaInicialComponent implements OnInit {
   // Função para se inscrever em uma competição
   inscreverCompeticao(id: number): void {
     this.router.navigate([`/inscricao-competicao/${id}`]);
+  }
+
+  competicaoSelecionada: any = null;
+
+  mostrarDetalhes(competicao: any): void {
+    this.competicaoSelecionada = competicao;
+  }
+
+  ocultarDetalhes(): void {
+    this.competicaoSelecionada = null;
   }
 }

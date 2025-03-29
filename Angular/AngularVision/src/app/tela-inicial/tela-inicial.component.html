@@ -21,11 +21,15 @@
 
     <div class="competicoes-container">
         <div *ngFor="let competicao of competicoes" class="competicao-card"
-            [ngStyle]="{'background-image': 'url(' + (competicao.bannerImagem ? competicao.bannerImagem : 'none') + ')'}">
-            <div [ngClass]="{'competicao-info': true, 'com-banner': competicao.bannerImagem !== null}">
-                <h3>{{ competicao.titulo }}</h3>
+            [ngStyle]="{'background-image': 'url(' + (competicao.bannerImagem ? competicao.bannerImagem : 'none') + ')'}"
+            (mouseenter)="mostrarDetalhes(competicao)" (mouseleave)="ocultarDetalhes()">
+            <div class="competicao-info">
+                <h3>{{ competicao.titulo }} - {{ competicao.emailOrganizador }}</h3>
+            </div>
+            <div *ngIf="competicao === competicaoSelecionada" class="detalhes-competicao">
                 <p><strong>Modalidade:</strong> {{ competicao.modalidade }}</p>
                 <p><strong>Descrição:</strong> {{ competicao.descricao }}</p>
+                <p><strong>Contato do organizador:</strong> {{ competicao.emailOrganizador }}</p>
                 <p><strong>Localização:</strong>
                     <span *ngIf="!competicao.pais"> Não informado</span>
                     <span *ngIf="competicao.pais">{{ competicao.pais }}</span>

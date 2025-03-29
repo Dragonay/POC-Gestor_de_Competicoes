@@ -1,156 +1,157 @@
 /* CSS para o componente cabecalho */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 2px solid #dee2e6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2e2e2e; /* Cor de fundo global */
+  border-bottom: 2px solid #555; /* Cor de borda ajustada */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #f5f5f5; /* Cor de texto global */
+}
+
+.header button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  background-color: #4caf50; /* Cor de botão global */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header button:hover {
+  background-color: #45a049; /* Cor de hover global */
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #555; /* Cor de borda ajustada */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #3e3e3e; /* Cor de fundo global */
+  border: 1px solid #555; /* Cor de borda ajustada */
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #f5f5f5; /* Cor de texto global */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #1e90ff; /* Cor de hover global */
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
   }
-  
+
   .header button {
-    padding: 10px 15px;
-    margin: 0 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 5px 0;
   }
-  
-  .header button:hover {
-    background-color: #0056b3;
-  }
-  
-  .user-menu {
-    position: relative;
-  }
-  
+
   .user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #dee2e6;
+    margin-top: 10px;
   }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-    }
-  
-    .header button {
-      margin: 5px 0;
-    }
-  
-    .user-avatar {
-      margin-top: 10px;
-    }
-  }
-  .notification-menu {
-    position: relative;
-    margin-left: 20px;
-  }
+}
 
-  .notification-icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    
-  }
+.notification-menu {
+  position: relative;
+  margin-left: 20px;
+}
 
-  .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 2.5px 5px;
-    font-size: 12px;
-  }
+.notification-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
 
-  .notification-menu .dropdown-menu {
-    top: 40px;
-    right: 0;
-  }
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2.5px 5px;
+  font-size: 12px;
+}
 
-  .notification-list {
-    max-height: 200px;
-    overflow-y: auto;
-  }
+.notification-menu .dropdown-menu {
+  top: 40px;
+  right: 0;
+}
 
-  .notification-item {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.notification-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
 
-  .delete-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-left: auto;
-    display: inline-block;
-    vertical-align: middle;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-  }
+.notification-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .delete-icon:hover {
-    opacity: 1;
-  }
+.delete-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: auto;
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
 
-  .notification-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-    border-bottom: 1px solid #dee2e6;
-  }
+.delete-icon:hover {
+  opacity: 1;
+}
 
-  .notification-item:last-child {
-    border-bottom: none;
-  }
+.notification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid #555; /* Cor de borda ajustada */
+}
 
-  .notification-item:hover::after {
-    content: attr(data-title);
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    z-index: 1000;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover::after {
+  content: attr(data-title);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
