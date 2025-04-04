@@ -8,12 +8,17 @@
   background-color: #0b0b1f;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  min-height: 100vh; /* Garante que a aba ocupe toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .perfil-usuario h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #f1f0f0;
 }
 
 .usuario-info {
@@ -35,7 +40,7 @@
 }
 
 .usuario-detalhes strong {
-  color: #555;
+  color: #f1efef;
 }
 
 .usuario-detalhes input,
@@ -66,7 +71,7 @@
 
 .upload-imagem p {
   margin-bottom: 10px;
-  color: #555;
+  color: #f7f6f6;
 }
 
 .upload-imagem input[type="file"] {
@@ -102,4 +107,8 @@
 
 .salvar-alteracoes button:hover {
   background-color: #e0a800;
+}
+.usuario-info {
+  align-items: flex-start; /* Alinha as informações do usuário no topo */
+  gap: 40px; /* Aumenta o espaçamento entre a foto de perfil e as informações */
 }

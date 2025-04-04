@@ -6,7 +6,7 @@
     padding: 20px 0 40px; /* Aumentado o padding inferior */
     position: fixed;
     bottom: 0;
-    width: 50%;
+    width: 1%;
     border-top: 1px solid var(--footer-border-color, #555); /* Diminuída a altura da borda */
     margin: 0; /* Adicionado para remover qualquer margem */
 }
